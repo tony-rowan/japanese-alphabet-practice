@@ -1,16 +1,10 @@
-<table>
-  <thead>
-    <th>Romaji</th>
-    <th>Hiragana</th>
-    <th>Katakana</th>
-  </thead>
-  <tbody>
-    <% @characters.each do |character| %>
-      <tr>
-        <td><%= character.romaji %></td>
-        <td><%= character.hiragana %></td>
-        <td><%= character.katakana %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="max-w-sm mx-auto grid grid-cols-3">
+  <div class="text-18">Romaji</div>
+  <div class="text-18">Hiragana</div>
+  <div class="text-18">Katakana</div>
+  <% @characters.each do |character| %>
+    <div class="text-14"><%= character.romaji %></div>
+    <div class="text-14"><%= character.hiragana %></div>
+    <div class="text-14"><%= character.katakana %></div>
+  <% end %>
+</div>
