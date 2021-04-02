@@ -31,3 +31,4 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+.rubocop-https---raw-githubusercontent-com-tony-rowan--rubocop-yml-main--rubocop-yml

@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails'
 
+gem 'active_hash'
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'pg'

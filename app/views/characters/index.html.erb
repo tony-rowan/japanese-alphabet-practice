@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <th>Romaji</th>
+    <th>Hiragana</th>
+    <th>Katakana</th>
+  </thead>
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.romaji %></td>
+        <td><%= character.hiragana %></td>
+        <td><%= character.katakana %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
