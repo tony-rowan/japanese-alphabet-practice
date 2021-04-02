@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :characters, only: :index
+  root "characters#show"
+
+  resources :characters, only: [:index, :show]
 end
