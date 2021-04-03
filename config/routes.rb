@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "characters#show"
+  root "flashcards#show"
 
   resources :characters, only: [:index, :show]
 end

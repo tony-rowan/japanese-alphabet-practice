@@ -4,6 +4,17 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.random
+    @character = character
+    @next_page = next_page
+  end
+
+  private
+
+  def character
+    @character ||= Character.find_by(romaji: params[:id])
+  end
+
+  def next_page
+    root_path(display: params[:display])
   end
 end
