@@ -6,11 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag "application", media: "all" %>
+    <%= javascript_pack_tag "application" %>
   </head>
 
   <body class="bg-red-600">
+    <div class="absolute top-4 right-4">
+      <%= link_to "Flashcards", root_path, class: "text-sm text-white hover:text-red-300" %>
+      <%= link_to "Character Table", characters_path, class: "text-sm text-white hover:text-red-300" %>
+    </div>
     <%= yield %>
   </body>
 </html>

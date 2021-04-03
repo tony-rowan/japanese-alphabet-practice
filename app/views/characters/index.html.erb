@@ -1,10 +1,18 @@
-<div class="max-w-sm mx-auto grid grid-cols-3">
-  <div class="text-18">Romaji</div>
-  <div class="text-18">Hiragana</div>
-  <div class="text-18">Katakana</div>
-  <% @characters.each do |character| %>
-    <div class="text-14"><%= character.romaji %></div>
-    <div class="text-14"><%= character.hiragana %></div>
-    <div class="text-14"><%= character.katakana %></div>
-  <% end %>
+<div class="w-screen sm:h-screen p-8 sm:p-0 flex items-center place-content-evenly">
+  <div class="grid grid-cols-3 gap-4 p-12 bg-white rounded-lg shadow-lg">
+    <div class="text-xl text-center">Romaji</div>
+    <div class="text-xl text-center">Hiragana</div>
+    <div class="text-xl text-center">Katakana</div>
+    <% @characters.each do |character| %>
+      <div class="text-lg text-center">
+        <%= character.romaji %>
+      </div>
+      <div class="text-lg text-center">
+        <%= character.hiragana %>
+      </div>
+      <div class="text-lg text-center">
+        <%= character.katakana %>
+      </div>
+    <% end %>
+  </div>
 </div>
