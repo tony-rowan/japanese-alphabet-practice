@@ -8,7 +8,6 @@ gem "rails"
 gem "active_hash"
 gem "bcrypt"
 gem "bootsnap", require: false
-gem "pg"
 gem "puma"
 gem "turbolinks"
 gem "webpacker"
