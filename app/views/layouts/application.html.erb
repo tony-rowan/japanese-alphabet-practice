@@ -11,10 +11,10 @@
   </head>
 
   <body class="bg-red-600">
-    <%= link_to root_path, class: "absolute top-4 left-4 text-white hover:text-red-300" do %>
+    <%= link_to root_path, class: "absolute top-4 left-4 text-white hover:text-red-300", title: "Practice" do %>
       <%= inline_svg_pack_tag "media/images/cards.svg" %>
     <% end %>
-    <%= link_to characters_path, class: "absolute top-4 right-4 text-white hover:text-red-300" do %>
+    <%= link_to characters_path, class: "absolute top-4 right-4 text-white hover:text-red-300", title: "Learn" do %>
       <%= inline_svg_pack_tag "media/images/table.svg" %>
     <% end %>
 
