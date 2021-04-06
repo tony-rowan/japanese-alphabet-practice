@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = character
-    @next_page = next_page
+    @question_response = question_response
   end
 
   private
@@ -14,7 +14,13 @@ class CharactersController < ApplicationController
     @character ||= Character.find_by(romaji: params[:id])
   end
 
-  def next_page
-    root_path(display: params[:display])
+  def question_response
+    return nil unless params[:correct]
+
+    if params[:correct] == "true"
+      "Correct!"
+    else
+      "Not Quite!"
+    end
   end
 end
