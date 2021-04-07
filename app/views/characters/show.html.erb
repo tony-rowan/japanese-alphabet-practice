@@ -1,6 +1,6 @@
 <% content_for(:body_class) { @question_response&.body_class } %>
 
-<div id="flashcards" class="w-screen sm:h-screen p-12 flex items-center place-content-evenly">
+<div id="flashcards" class="w-screen sm:h-screen p-12 pt-24 flex items-center place-content-evenly">
   <div class="flex flex-col w-full gap-8">
     <% if @question_response %>
       <p class="text-white text-2xl text-center"><%= @question_response.text %></p>

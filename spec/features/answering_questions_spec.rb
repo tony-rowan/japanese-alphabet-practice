@@ -51,4 +51,33 @@ RSpec.describe "Answering questions" do
     expect(page).to have_text(question_b.correct_answer)
     question_b.answers.each { |answer| expect(page).to have_text(answer) }
   end
+
+  scenario "Playing multiple times" do
+    question = Question.create
+    allow(Question).to receive(:new).and_return(question)
+
+    visit(root_path)
+    click_on(question.correct_answer)
+
+    expect(page).to have_text("1")
+    expect(page).to have_text("100%")
+
+    click_on("Next Question")
+    click_on(question.correct_answer)
+
+    expect(page).to have_text("2")
+    expect(page).to have_text("100%")
+
+    click_on("Next Question")
+    click_on((question.answers - [question.correct_answer]).first)
+
+    expect(page).to have_text("3")
+    expect(page).to have_text("67%")
+
+    click_on("Next Question")
+    click_on((question.answers - [question.correct_answer]).first)
+
+    expect(page).to have_text("4")
+    expect(page).to have_text("50%")
+  end
 end

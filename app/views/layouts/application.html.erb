@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JapaneseFlashcards</title>
+    <title>Learn to Read Japanese</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,6 +16,27 @@
     <% end %>
     <%= link_to characters_path, class: "button--icon absolute top-4 right-4", title: "Learn" do %>
       <%= inline_svg_pack_tag "media/images/table.svg" %>
+    <% end %>
+
+    <% if @score.attempts > 0 %>
+      <div class="absolute top-4 left-16 right-16 flex place-content-evenly text-center text-white">
+        <div>
+          <p class="text-lg font-semibold">
+            <%= @score.attempts %>
+          </p>
+          <p class="text-sm">
+            Attempts
+          </p>
+        </div>
+        <div>
+          <p class="text-lg font-semibold">
+            <%= number_to_percentage(@score.accuracy, precision: 0) %>
+          </p>
+          <p class="text-sm">
+            Accuracy
+          </p>
+        </div>
+      </div>
     <% end %>
 
     <%= yield %>

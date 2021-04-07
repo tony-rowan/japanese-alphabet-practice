@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  include ScoreKeeping
+
   def show
     @question = question
   end
