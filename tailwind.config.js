@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./app/helpers/**/*", "./app/views/**/*"],
+  purge: ["./app/models/**/*", "./app/helpers/**/*", "./app/views/**/*"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},

@@ -11,16 +11,12 @@ class CharactersController < ApplicationController
   private
 
   def character
-    @character ||= Character.find_by(romaji: params[:id])
+    Character.find_by(romaji: params[:id])
   end
 
   def question_response
     return nil unless params[:correct]
 
-    if params[:correct] == "true"
-      "Correct!"
-    else
-      "Not Quite!"
-    end
+    QuestionResponse.new(correct: params[:correct])
   end
 end

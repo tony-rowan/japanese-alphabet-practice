@@ -1,7 +1,9 @@
+<% content_for(:body_class) { @question_response&.body_class } %>
+
 <div id="flashcards" class="w-screen sm:h-screen p-12 flex items-center place-content-evenly">
   <div class="flex flex-col w-full gap-8">
     <% if @question_response %>
-      <p class="text-white text-2xl text-center"><%= @question_response %></p>
+      <p class="text-white text-2xl text-center"><%= @question_response.text %></p>
     <% end %>
 
     <div class="grid sm:grid-cols-3 gap-8 place-content-stretch place-items-stretch">
