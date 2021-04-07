@@ -1,24 +1,33 @@
-# README
+# Japanese Alphabet Practice
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web application designed to help you read Hiragana and Katakana.
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+### Requirements
 
-* System dependencies
+The ruby and nodejs versions are managed with asdf. Once it is installed,
+installing the correct versions is a simple as running
 
-* Configuration
+```bash
+$ asdf install
+```
 
-* Database creation
+### Setup
 
-* Database initialization
+The entire application runs in memory so there is no database, meaning
+setup is as simple as installing gems, node packages and starting the server.
 
-* How to run the test suite
+```bash
+$ bin/setup
+$ bin/rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Testing
 
-* Deployment instructions
+Tests run using RSpec, with Capybara driving feature tests. To run all tests
+simply run
 
-* ...
+```bash
+$ bin/rspec
+```
