@@ -45,7 +45,7 @@ RSpec.describe "Answering questions" do
 
     visit(root_path)
     click_on(question_a.correct_answer)
-    click_on("Again")
+    click_on("Next Question")
 
     expect(page).to have_text(question_b.question)
     expect(page).to have_text(question_b.correct_answer)

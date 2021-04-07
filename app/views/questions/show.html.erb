@@ -7,12 +7,12 @@
       <%= link_to(
         @question.answers.first,
         character_path_for_answer(@question.answers.first),
-        class: "p-14 bg-white shadow-lg rounded-lg text-2xl hover:bg-yellow-500 hover:text-white"
+        class: "button--card p-14 text-2xl"
       ) %>
       <%= link_to(
         @question.answers.last,
         character_path_for_answer(@question.answers.last),
-        class: "p-14 bg-white shadow-lg rounded-lg text-2xl hover:bg-yellow-500 hover:text-white"
+        class: "button--card p-14 text-2xl"
       ) %>
     </div>
   </div>

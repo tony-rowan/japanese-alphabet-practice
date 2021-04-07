@@ -1,3 +1,16 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.button--icon {
+  @apply transition;
+  @apply text-white hover:text-yellow-500;
+}
+
+.button--card {
+  @apply transition;
+  @apply text-black hover:text-white;
+  @apply bg-white hover:bg-yellow-500;
+  @apply shadow-lg;
+  @apply rounded-lg;
+}
