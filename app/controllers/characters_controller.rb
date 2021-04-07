@@ -8,8 +8,6 @@ class CharactersController < ApplicationController
   def show
     @character = character
     @question_response = question_response
-
-    update_score
   end
 
   private
@@ -22,12 +20,5 @@ class CharactersController < ApplicationController
     return nil unless params[:correct]
 
     QuestionResponse.new(correct: params[:correct])
-  end
-
-  def update_score
-    return unless @question_response
-
-    @score.correct += 1 if question_response.correct?
-    @score.attempts += 1
   end
 end

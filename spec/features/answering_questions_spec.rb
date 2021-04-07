@@ -8,8 +8,8 @@ RSpec.describe "Answering questions" do
     visit(root_path)
 
     expect(page).to have_text(question.question)
-    expect(page).to have_text(question.correct_answer)
-    question.answers.each { |answer| expect(page).to have_text(answer) }
+    expect(page).to have_button(question.correct_answer)
+    question.answers.each { |answer| expect(page).to have_button(answer) }
   end
 
   scenario "answering a question correctly" do
@@ -48,8 +48,8 @@ RSpec.describe "Answering questions" do
     click_on("Next Question")
 
     expect(page).to have_text(question_b.question)
-    expect(page).to have_text(question_b.correct_answer)
-    question_b.answers.each { |answer| expect(page).to have_text(answer) }
+    expect(page).to have_button(question_b.correct_answer)
+    question_b.answers.each { |answer| expect(page).to have_button(answer) }
   end
 
   scenario "Playing multiple times" do
@@ -79,5 +79,24 @@ RSpec.describe "Answering questions" do
 
     expect(page).to have_text("4")
     expect(page).to have_text("50%")
+  end
+
+  scenario "Refreshing the question result page" do
+    question = Question.create
+    allow(Question).to receive(:new).and_return(question)
+
+    visit(root_path)
+    click_on(question.correct_answer)
+    click_on("Next Question")
+    click_on(question.correct_answer)
+
+    expect(page).to have_text("2")
+    expect(page).to have_text("100%")
+
+    # refreshing the result page should not count as a further attempt
+    visit(current_url)
+
+    expect(page).to have_text("2")
+    expect(page).to have_text("100%")
   end
 end

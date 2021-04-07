@@ -4,14 +4,14 @@
       <%= @question.question %>
     </div>
     <div class="flex flex-col gap-4">
-      <%= link_to(
+      <%= button_to(
         @question.answers.first,
-        character_path_for_answer(@question.answers.first),
+        answer_path(@question.answers.first),
         class: "button--card p-14 text-2xl"
       ) %>
-      <%= link_to(
+      <%= button_to(
         @question.answers.last,
-        character_path_for_answer(@question.answers.last),
+        answer_path(@question.answers.last),
         class: "button--card p-14 text-2xl"
       ) %>
     </div>

@@ -11,8 +11,8 @@ class QuestionsController < ApplicationController
     @question ||= Question.create
   end
 
-  def character_path_for_answer(answer)
-    character_path(question.character.romaji, correct: answer == question.correct_answer)
+  def answer_path(answer)
+    answers_path(romaji: question.character.romaji, correct: answer == question.correct_answer)
   end
-  helper_method :character_path_for_answer
+  helper_method :answer_path
 end
