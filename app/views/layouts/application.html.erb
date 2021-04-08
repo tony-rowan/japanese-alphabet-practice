@@ -11,10 +11,10 @@
   </head>
 
   <body class="<%= content_for(:body_class) || "bg-blue-500" %>">
-    <%= link_to root_path, class: "button--icon absolute top-4 left-4", title: "Practice" do %>
+    <%= link_to root_path, class: "button button--icon absolute top-4 left-4", title: "Practice" do %>
       <%= inline_svg_pack_tag "media/images/cards.svg" %>
     <% end %>
-    <%= link_to characters_path, class: "button--icon absolute top-4 right-4", title: "Learn" do %>
+    <%= link_to characters_path, class: "button button--icon absolute top-4 right-4", title: "Learn" do %>
       <%= inline_svg_pack_tag "media/images/table.svg" %>
     <% end %>
 

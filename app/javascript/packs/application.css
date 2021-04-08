@@ -2,15 +2,35 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.button--icon {
+.button {
   @apply transition;
+  @apply cursor-pointer;
+}
+
+.button--icon {
   @apply text-white hover:text-yellow-500;
 }
 
 .button--card {
-  @apply transition;
   @apply text-black hover:text-white;
   @apply bg-white hover:bg-yellow-500;
   @apply shadow-lg;
   @apply rounded-lg;
+}
+
+.card {
+  @apply bg-white;
+  @apply shadow-lg;
+  @apply rounded-lg;
+  @apply text-center;
+}
+
+.card--large {
+  @apply px-24 py-16;
+  @apply text-4xl;
+}
+
+.card--small {
+  @apply px-20 py-14;
+  @apply text-2xl;
 }

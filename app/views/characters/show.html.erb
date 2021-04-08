@@ -1,20 +1,30 @@
 <% content_for(:body_class) { @question_response&.body_class } %>
 
-<div class="w-screen sm:h-screen p-12 pt-24 flex items-center place-content-evenly">
-  <div class="flex flex-col w-full gap-8">
+<div class="w-screen min-h-screen p-12 pt-24 flex items-center place-content-evenly">
+  <div class="flex flex-col gap-4">
     <% if @question_response %>
-      <p class="text-white text-2xl text-center"><%= @question_response.text %></p>
+      <p class="text-white text-2xl text-center mb-4">
+        <%= @question_response.text %>
+      </p>
     <% end %>
 
-    <div class="grid sm:grid-cols-3 gap-8 place-content-stretch place-items-stretch">
-      <% [@character.romaji, @character.hiragana, @character.katakana].each do |letter| %>
-        <div class="py-16 sm:py-24 bg-white shadow-lg rounded-lg text-8xl text-center">
-          <%= letter %>
-        </div>
-      <% end %>
+    <div class="card card--large">
+      <p><%= @character.romaji %></p>
+      <p class="text-xl">Romaji</p>
+    </div>
+    <div class="flex gap-4 mb-8">
+      <div class="card card--small">
+        <p><%= @character.hiragana %></p>
+        <p class="text-xl">Hiragana</p>
+      </div>
+      <div class="card card--small">
+        <p><%= @character.katakana %></p>
+        <p class="text-xl">Katakana</p>
+      </div>
     </div>
 
-  <%= link_to root_path, class: "button--icon self-center", title: "Next Question" do %>
-    <%= inline_svg_pack_tag "media/images/next.svg", class: "w-10 h-10" %>
-  <% end %>
+    <%= link_to root_path, class: "button button--icon self-center", title: "Next Question" do %>
+      <%= inline_svg_pack_tag "media/images/next.svg", class: "w-10 h-10" %>
+    <% end %>
+  </div>
 </div>
