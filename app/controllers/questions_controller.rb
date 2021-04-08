@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  include ScoreKeeping
+  before_action :restore_score_from_session
 
   def show
     @question = question

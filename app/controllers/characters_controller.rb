@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
-  include ScoreKeeping
+  before_action :restore_score_from_session, only: :show
+  after_action :save_score_to_session, only: :show
 
   def index
     @characters = Character.all

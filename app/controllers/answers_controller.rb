@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
-  include ScoreKeeping
+  before_action :restore_score_from_session
+  after_action :save_score_to_session
 
   def create
     update_score

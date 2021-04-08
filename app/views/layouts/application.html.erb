@@ -16,7 +16,7 @@
         <%= inline_svg_pack_tag "media/images/cards.svg" %>
       <% end %>
 
-      <% if @score.attempts > 0 %>
+      <% if show_score? %>
         <div class="flex gap-8 text-center text-white">
           <div>
             <p class="text-lg font-semibold">

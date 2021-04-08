@@ -2,11 +2,14 @@ module ScoreKeeping
   extend ActiveSupport::Concern
 
   included do
-    before_action :restore_score_from_session
-    after_action :save_score_to_session
+    helper_method :show_score?
   end
 
   private
+
+  def show_score?
+    @score && @score.attempts > 0
+  end
 
   def restore_score_from_session
     correct = session[:score_correct].try(:to_i) || 0
