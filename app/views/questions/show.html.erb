@@ -1,17 +1,15 @@
-<div class="flex flex-col gap-4">
-  <div class="card card--large">
+<div class="grid grid-cols-2 gap-4 w-full">
+  <div class="card card--large col-span-2">
     <%= @question.question %>
   </div>
-  <div class="flex gap-4">
-    <%= button_to(
-      @question.answers.first,
-      answer_path(@question.answers.first),
-      class: "button button--card card card--small"
-    ) %>
-    <%= button_to(
-      @question.answers.last,
-      answer_path(@question.answers.last),
-      class: "button button--card card card--small"
-    ) %>
-  </div>
+  <%= button_to(
+    @question.answers.first,
+    answer_path(@question.answers.first),
+    class: "button button--card card card--small w-full"
+  ) %>
+  <%= button_to(
+    @question.answers.last,
+    answer_path(@question.answers.last),
+    class: "button button--card card card--small w-full"
+  ) %>
 </div>

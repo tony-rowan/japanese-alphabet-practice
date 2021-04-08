@@ -11,35 +11,38 @@
   </head>
 
   <body class="<%= content_for(:body_class) || "bg-blue-500" %>">
-    <%= link_to root_path, class: "button button--icon absolute top-4 left-4", title: "Practice" do %>
-      <%= inline_svg_pack_tag "media/images/cards.svg" %>
-    <% end %>
-    <%= link_to characters_path, class: "button button--icon absolute top-4 right-4", title: "Learn" do %>
-      <%= inline_svg_pack_tag "media/images/table.svg" %>
-    <% end %>
+    <div class="flex justify-between p-4">
+      <%= link_to root_path, class: "button button--icon", title: "Practice" do %>
+        <%= inline_svg_pack_tag "media/images/cards.svg" %>
+      <% end %>
 
-    <% if @score.attempts > 0 %>
-      <div class="absolute top-4 left-16 right-16 flex place-content-evenly text-center text-white">
-        <div>
-          <p class="text-lg font-semibold">
-            <%= @score.attempts %>
-          </p>
-          <p class="text-sm">
-            Attempts
-          </p>
+      <% if @score.attempts > 0 %>
+        <div class="flex gap-8 text-center text-white">
+          <div>
+            <p class="text-lg font-semibold">
+              <%= @score.attempts %>
+            </p>
+            <p class="text-sm">
+              Attempts
+            </p>
+          </div>
+          <div>
+            <p class="text-lg font-semibold">
+              <%= number_to_percentage(@score.accuracy, precision: 0) %>
+            </p>
+            <p class="text-sm">
+              Accuracy
+            </p>
+          </div>
         </div>
-        <div>
-          <p class="text-lg font-semibold">
-            <%= number_to_percentage(@score.accuracy, precision: 0) %>
-          </p>
-          <p class="text-sm">
-            Accuracy
-          </p>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
 
-    <div class="w-screen min-h-screen p-4 sm:p-12 pt-24 sm:pt-24 flex items-center place-content-evenly">
+      <%= link_to characters_path, class: "button button--icon", title: "Learn" do %>
+        <%= inline_svg_pack_tag "media/images/table.svg" %>
+      <% end %>
+    </div>
+
+    <div class="p-8 max-w-lg mx-auto">
       <%= yield %>
     </div>
   </body>
