@@ -1,30 +1,28 @@
 <% content_for(:body_class) { @question_response&.body_class } %>
 
-<div class="w-screen min-h-screen p-12 pt-24 flex items-center place-content-evenly">
-  <div class="flex flex-col gap-4">
-    <% if @question_response %>
-      <p class="text-white text-2xl text-center mb-4">
-        <%= @question_response.text %>
-      </p>
-    <% end %>
+<div class="flex flex-col gap-4">
+  <% if @question_response %>
+    <p class="text-white text-2xl text-center mb-4">
+      <%= @question_response.text %>
+    </p>
+  <% end %>
 
-    <div class="card card--large">
-      <p><%= @character.romaji %></p>
-      <p class="text-xl">Romaji</p>
-    </div>
-    <div class="flex gap-4 mb-8">
-      <div class="card card--small">
-        <p><%= @character.hiragana %></p>
-        <p class="text-xl">Hiragana</p>
-      </div>
-      <div class="card card--small">
-        <p><%= @character.katakana %></p>
-        <p class="text-xl">Katakana</p>
-      </div>
-    </div>
-
-    <%= link_to root_path, class: "button button--icon self-center", title: "Next Question" do %>
-      <%= inline_svg_pack_tag "media/images/next.svg", class: "w-10 h-10" %>
-    <% end %>
+  <div class="card card--large">
+    <p><%= @character.romaji %></p>
+    <p class="text-lg sm:text-xl">Romaji</p>
   </div>
+  <div class="flex gap-4 mb-8">
+    <div class="card card--small">
+      <p><%= @character.hiragana %></p>
+      <p class="text-lg sm:text-xl">Hiragana</p>
+    </div>
+    <div class="card card--small">
+      <p><%= @character.katakana %></p>
+      <p class="text-lg sm:text-xl">Katakana</p>
+    </div>
+  </div>
+
+  <%= link_to root_path, class: "button button--icon self-center", title: "Next Question" do %>
+    <%= inline_svg_pack_tag "media/images/next.svg", class: "w-10 h-10" %>
+  <% end %>
 </div>
