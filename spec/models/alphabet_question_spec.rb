@@ -4,7 +4,7 @@ RSpec.describe AlphabetQuestion do
   describe ".create" do
     it "creates a question that asks to identify the alphabet for the given letter" do
       question = AlphabetQuestion.create
-      character = Character.find_by_hiragana_or_katakana(question.question)
+      character = Character.find_by_kana(question.question)
 
       expect(question).not_to be_nil
       expect(character).not_to be_nil

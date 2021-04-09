@@ -20,11 +20,17 @@ class CharacterQuestion < Question
   end
 
   def select_question
-    character = rand > 0.5 ? character_a : character_b
-    letter = rand > 0.5 ? :hiragana : :katakana
-    @character = character
-    @question = character.send(letter)
-    @answers = [character_a.romaji, character_b.romaji]
-    @correct_answer = character.romaji
+    kana = [:romaji, :hiragana, :katakana].sample
+    @character = rand > 0.5 ? character_a : character_b
+    @question = character.send(kana)
+
+    if kana == :romaji
+      kana = [:hiragana, :katakana].sample
+      @answers = [character_a.send(kana), character_b.send(kana)]
+      @correct_answer = character.send(kana)
+    else
+      @answers = [character_a.romaji, character_b.romaji]
+      @correct_answer = character.romaji
+    end
   end
 end

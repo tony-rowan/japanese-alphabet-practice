@@ -3,7 +3,7 @@ class Character < ActiveYaml::Base
     all.sample
   end
 
-  def self.find_by_hiragana_or_katakana(letter)
-    find_by(hiragana: letter) || find_by(katakana: letter)
+  def self.find_by_kana(kana)
+    find_by(romaji: kana) || find_by(hiragana: kana) || find_by(katakana: kana)
   end
 end
