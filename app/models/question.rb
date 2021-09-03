@@ -7,5 +7,5 @@ class Question
     end
   end
 
-  attr_reader :character, :question, :answers, :correct_answer
+  attr_reader :text, :character, :question, :answers, :correct_answer
 end

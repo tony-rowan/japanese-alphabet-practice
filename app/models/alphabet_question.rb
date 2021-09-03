@@ -4,6 +4,7 @@ class AlphabetQuestion < Question
   end
 
   def initialize
+    @text = "Which alphabet is this character from?"
     @character = Character.random
     @answers = [:hiragana, :katakana]
     @correct_answer = answers.sample

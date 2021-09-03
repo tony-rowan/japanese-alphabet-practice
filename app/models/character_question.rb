@@ -28,9 +28,11 @@ class CharacterQuestion < Question
       kana = [:hiragana, :katakana].sample
       @answers = [character_a.send(kana), character_b.send(kana)]
       @correct_answer = character.send(kana)
+      @text = "What is the #{kana} for this character?"
     else
       @answers = [character_a.romaji, character_b.romaji]
       @correct_answer = character.romaji
+      @text = "What is the romaji for this character?"
     end
   end
 end
