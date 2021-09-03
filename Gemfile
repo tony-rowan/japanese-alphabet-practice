@@ -24,7 +24,6 @@ group :test do
   gem "capybara-screenshot"
   gem "launchy"
   gem "selenium-webdriver"
-  gem "shoulda-matchers"
   gem "webdrivers"
 end
 
