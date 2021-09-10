@@ -1,7 +1,7 @@
 module.exports = {
   purge: [
     "./app/helpers/**/*",
-    "./app/javascript/**/*",
+    "./app/frontend/**/*",
     "./app/models/**/*",
     "./app/views/**/*",
   ],
