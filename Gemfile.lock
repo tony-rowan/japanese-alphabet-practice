@@ -214,9 +214,8 @@ GEM
       rubocop (= 1.20.0)
       rubocop-performance (= 1.11.5)
     thor (1.1.0)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.7.11)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
@@ -262,7 +261,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   standard
-  turbolinks
+  turbo-rails
   web-console
   webdrivers
   webpacker
