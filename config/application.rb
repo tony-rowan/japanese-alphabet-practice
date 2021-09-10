@@ -2,6 +2,7 @@ require_relative "boot"
 
 require "rails"
 require "action_controller/railtie"
+require "active_job/railtie"
 require "action_view/railtie"
 
 # Require the gems listed in Gemfile, including any gems
