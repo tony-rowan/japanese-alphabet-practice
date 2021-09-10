@@ -3,6 +3,9 @@
   <head>
     <title>Learn to Read Japanese</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <% if skip_preview? %>
+      <meta name="turbo-cache-control" content="no-preview">
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_pack_tag "app_icon.png" %>

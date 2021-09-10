@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :restore_score_from_session
+  before_action :skip_preview
 
   def show
     @question = question
