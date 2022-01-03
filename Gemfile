@@ -1,4 +1,4 @@
-ruby "3.0.1"
+ruby "3.0.2"
 
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
@@ -8,10 +8,12 @@ gem "rails"
 gem "active_hash"
 gem "bcrypt"
 gem "bootsnap", require: false
+gem "cssbundling-rails"
 gem "inline_svg"
+gem "jsbundling-rails"
 gem "puma"
+gem "sprockets-rails"
 gem "turbo-rails"
-gem "webpacker"
 
 group :development, :test do
   gem "byebug"

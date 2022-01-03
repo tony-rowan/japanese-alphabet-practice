@@ -1,16 +1,8 @@
 module.exports = {
-  purge: [
-    "./app/helpers/**/*",
-    "./app/frontend/**/*",
-    "./app/models/**/*",
-    "./app/views/**/*",
+  content: [
+    "./app/views/**/*.html.erb",
+    "./app/helpers/**/*.rb",
+    "./app/javascript/**/*.js",
+    "./app/models/**/*.rb",
   ],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
 };

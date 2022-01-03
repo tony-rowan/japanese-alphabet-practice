@@ -8,16 +8,16 @@
     <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_pack_tag "app_icon.png" %>
-    <%= favicon_pack_tag "app_icon.png", rel: 'apple-touch-icon', type: 'image/png' %>
-    <%= stylesheet_pack_tag "application", media: "all" %>
-    <%= javascript_pack_tag "application" %>
+    <%= favicon_link_tag "app_icon.png" %>
+    <%= favicon_link_tag "app_icon.png", rel: 'apple-touch-icon', type: 'image/png' %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body class="<%= content_for(:body_class) || "bg-blue-500" %>">
     <div class="flex justify-between p-4">
-      <%= link_to root_path, class: "button button--icon", title: "Practice" do %>
-        <%= inline_svg_pack_tag "media/images/cards.svg" %>
+      <%= link_to root_path, class: "h-6 w-6 button button--icon", title: "Practice" do %>
+        <%= inline_svg_tag "cards.svg" %>
       <% end %>
 
       <% if show_score? %>
@@ -41,8 +41,8 @@
         </div>
       <% end %>
 
-      <%= link_to characters_path, class: "button button--icon", title: "Learn" do %>
-        <%= inline_svg_pack_tag "media/images/table.svg" %>
+      <%= link_to characters_path, class: "h-6 w-6 button button--icon", title: "Learn" do %>
+        <%= inline_svg_tag "table.svg" %>
       <% end %>
     </div>
 

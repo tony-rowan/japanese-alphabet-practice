@@ -1,23 +1,22 @@
 {
   "name": "japanese-alphabet-practice",
   "private": true,
+  "version": "1.0.0",
   "dependencies": {
-    "@hotwired/turbo-rails": "^7.0.0-rc.3",
-    "@rails/webpacker": "5.2.1",
-    "@tailwindcss/postcss7-compat": "^2.0.4",
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "stimulus": "^2.0.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "@hotwired/turbo-rails": "^7.0.1",
+    "autoprefixer": "^10",
+    "esbuild": "^0.14.10",
+    "postcss": "^8",
+    "tailwindcss": "^3"
   },
-  "version": "0.1.0",
   "devDependencies": {
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
-    "prettier": "^2.3.2",
-    "webpack-dev-server": "^3.11.2"
+    "prettier": "^2.3.2"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
   }
 }

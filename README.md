@@ -20,14 +20,5 @@ setup is as simple as installing gems, node packages and starting the server.
 
 ```bash
 $ bin/setup
-$ bin/rails s
-```
-
-### Testing
-
-Tests run using RSpec, with Capybara driving feature tests. To run all tests
-simply run
-
-```bash
-$ bin/rspec
+$ bin/dev
 ```
