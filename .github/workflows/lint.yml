@@ -1,0 +1,49 @@
+name: Lint
+
+env:
+  RUBY_VERSION: "3.1.0"
+  NODE_VERSION: "16.13.0"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  standardrb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+      - name: Bundle
+        run: bundle install
+      - name: StandardRB
+        run: bundle exec standardrb
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            ~/yarn-cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Yarn
+        run: yarn install
+      - name: Prettier
+        run: yarn prettier --check .
